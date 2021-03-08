@@ -1,4 +1,4 @@
-//@Library('shared-library')
+@Library('shared-library')
 
 properties([pipelineTriggers([githubPush()])])      
 pipeline{

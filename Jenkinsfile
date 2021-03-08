@@ -1,6 +1,6 @@
-@Library('shared-library')
+//@Library('shared-library')
 
-//properties([pipelineTriggers([githubPush()])])      
+properties([pipelineTriggers([githubPush()])])      
 pipeline{
     agent any
     tools{

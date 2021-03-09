@@ -1,4 +1,4 @@
-//@Library('shared-library')
+@Library('shared-library')
 //properties([pipelineTriggers([pollSCM('* * * * *')])])
 pipeline{
     agent any
@@ -14,12 +14,14 @@ pipeline{
             }
         }
         */
+	    /*
         stage('sonar analysis') {
                 steps {
                 
                 bat 'mvn clean package sonar:sonar'  
             }
         }   
+	*/
 	stage('Package'){
             steps{
                 bat 'mvn clean package'

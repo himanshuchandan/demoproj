@@ -1,4 +1,5 @@
-@Library('shared-library')
+@Library(value="shared-library")
+//@Library('shared-library')
 //properties([pipelineTriggers([pollSCM('* * * * *')])])
 pipeline{
     agent any

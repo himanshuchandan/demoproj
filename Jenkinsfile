@@ -23,7 +23,7 @@ pipeline{
         stage('sonar analysis') {
                 steps {
                 
-                bat 'mvn clean sonar:sonar'  
+                bat 'mvn sonar:sonar'  
             }
         }
         

@@ -14,10 +14,16 @@ pipeline{
             }
         }
         */
+	stage('Package'){
+            steps{
+                bat 'mvn clean package'
+              //sh 'mvn package'
+            }
+        }
         stage('sonar analysis') {
                 steps {
                 
-                bat 'mvn clean install sonar:sonar'  
+                bat 'mvn clean sonar:sonar'  
             }
         }
         
@@ -27,12 +33,6 @@ pipeline{
                 sh 'mvn -f /var/lib/jenkins/workspace/student_data_101/bootjpa/pom.xml clean compile'  
             }
         }*/
-        stage('Package'){
-            steps{
-                bat 'mvn clean package'
-              //sh 'mvn package'
-            }
-        }
         stage('Store war in nexus repo'){
             steps{
                nexusArtifactUploader artifacts: [

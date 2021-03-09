@@ -14,20 +14,18 @@ pipeline{
             }
         }
         */
-	 /*   
-	stage('Package'){
-            steps{
-                bat 'mvn clean package'
-              //sh 'mvn package'
-            }
-        }
-	*/
         stage('sonar analysis') {
                 steps {
                 
                 bat 'mvn clean package sonar:sonar'  
             }
-        }
+        }   
+	stage('Package'){
+            steps{
+                bat 'mvn clean package'
+              //sh 'mvn package'
+            }
+        }    
         
        /* stage('Build') {
                 steps {

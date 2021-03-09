@@ -14,16 +14,18 @@ pipeline{
             }
         }
         */
+	 /*   
 	stage('Package'){
             steps{
                 bat 'mvn clean package'
               //sh 'mvn package'
             }
         }
+	*/
         stage('sonar analysis') {
                 steps {
                 
-                bat 'mvn sonar:sonar'  
+                bat 'mvn clean package sonar:sonar'  
             }
         }
         

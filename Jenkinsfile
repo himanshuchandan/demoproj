@@ -1,4 +1,3 @@
-@Library(value="shared-library")
 //@Library('shared-library')
 //properties([pipelineTriggers([pollSCM('* * * * *')])])
 pipeline{
